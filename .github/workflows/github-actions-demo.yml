@@ -7,4 +7,6 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-    - run: Invoke-WebRequest -Uri "http://Sarojini:111877aeebeb61d45b214b7dd4083864b9@localhost:8080/job/Demo/build?token=iamsarojini"    
+    - run: 
+        Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+        Invoke-WebRequest -Uri "http://Sarojini:111877aeebeb61d45b214b7dd4083864b9@localhost:8080/job/Demo/build?token=iamsarojini"    

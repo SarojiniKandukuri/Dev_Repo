@@ -25,4 +25,4 @@ jobs:
           }
           
           # Make the request with the Authorization header
-          Invoke-WebRequest -Uri $uri -Headers $headers
+          Invoke-WebRequest -Uri $uri -Headers $headers -UseBasicParsing

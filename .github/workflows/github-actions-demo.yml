@@ -7,4 +7,4 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-    - run: curl http://Sarojini:111877aeebeb61d45b214b7dd4083864b9@localhost:8080/job/Demo/build?token=iamsarojini    
+    - run: Invoke-WebRequest -Uri "http://Sarojini:111877aeebeb61d45b214b7dd4083864b9@localhost:8080/job/Demo/build?token=iamsarojini"    

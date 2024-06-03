@@ -1,4 +1,4 @@
 # Dev_Repo
 
 
-Hi all, I am yet done
+Hi everyone, I am yet done

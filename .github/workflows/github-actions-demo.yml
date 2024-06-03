@@ -22,4 +22,3 @@ jobs:
           
           # Make the request with basic authentication
           Invoke-WebRequest -Uri $uri -Credential $credential
-        shell: pwsh

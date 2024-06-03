@@ -16,9 +16,13 @@ jobs:
           $username = "Sarojini"
           $apiToken = "111877aeebeb61d45b214b7dd4083864b9"
           
-          # Create a credential object
-          $secureApiToken = ConvertTo-SecureString $apiToken -AsPlainText -Force
-          $credential = New-Object System.Management.Automation.PSCredential ($username, $secureApiToken)
+          # Encode the credentials to Base64
+          $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("${username}:${apiToken}")))
           
-          # Make the request with basic authentication
-          Invoke-WebRequest -Uri $uri -Credential $credential
+          # Create headers
+          $headers = @{
+              Authorization = "Basic $base64AuthInfo"
+          }
+          
+          # Make the request with the Authorization header
+          Invoke-WebRequest -Uri $uri -Headers $headers
